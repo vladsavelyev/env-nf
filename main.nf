@@ -1,3 +1,5 @@
+nextflow.enable.dsl = 2
+
 process printEnv {
     container 'ubuntu:latest'
     
@@ -8,4 +10,8 @@ process printEnv {
     """
     env | sort
     """
+}
+
+workflow {
+    printEnv | view
 }
